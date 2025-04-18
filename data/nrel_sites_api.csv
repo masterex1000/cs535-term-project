@@ -1,0 +1,77 @@
+STATION_ID,STATION_FULLNAME,STATION_SHORTNAME,RESERVED,LATITUDE_DEG,LONGITUDE_DEG,ELEVATION_M,ACTIVE
+RCS,ARM Radiometer Characterization System (RCS),ARM RCS,0,36.606,-97.486,320,0
+BS,Bluefield State College,BSC,0,37.265,-81.24,803,0
+HSU,Cal Poly Humboldt (SoRMS),Humboldt SoRMS,0,40.876,-124.08,36,0
+EC,Elizabeth City State University,ECSU,0,36.282,-76.216,26,0
+LRSS,Lowry Range Solar Station (RSR),LRSS,0,39.60701,-104.58017,1860,0
+ESIF,NREL Energy Systems Integration Facility,ESIF,0,39.7427,-105.1701,1793,1
+NWTC,NREL Flatirons Campus (M2),Flatirons M2,0,39.9106,-105.2347,1855,1
+SRRLASI,NREL SRRL All Sky Imager (ASI-16),SRRL ASI-16,0,39.7423,-105.1785,1828.8,1
+AOCS,NREL Solar Radiation Research Laboratory (AOCS),SRRL AOCS,0,39.7423,-105.1785,1828.8,0
+AODSRRLBM,NREL Solar Radiation Research Laboratory (AOD ESR-MRI L2),SRRL AOD MRI-L2,0,39.7423,-105.1785,1828.8,1
+AODSRRLAM,NREL Solar Radiation Research Laboratory (AOD ESR-MRI L2A),SRRL AOD MRI-L2A,0,39.7423,-105.1785,1828.8,1
+AODSRRLBE,NREL Solar Radiation Research Laboratory (AOD ESR-Sunrad L2),SRRL AOD ESR-L2,0,39.7423,-105.1785,1828.8,1
+AODSRRLAE,NREL Solar Radiation Research Laboratory (AOD ESR-Sunrad L2A),SRRL AOD ESR-L2A,0,39.7423,-105.1785,1828.8,1
+AODSRRLBC,NREL Solar Radiation Research Laboratory (AOD SR-CEReS L2),SRRL AOD SR-CEReS,0,39.7423,-105.1785,1828.8,1
+ATI,NREL Solar Radiation Research Laboratory (ATI RSP),SRRL ATI RSP,0,39.7423,-105.1785,1828.8,0
+BMS,NREL Solar Radiation Research Laboratory (BMS),SRRL BMS,0,39.7423,-105.1785,1828.8,1
+BSRN,NREL Solar Radiation Research Laboratory (BSRN),SRRL BSRN,0,39.7423,-105.1785,1828.8,0
+PWVSRRL,NREL Solar Radiation Research Laboratory (GPS-based PWV),SRRL PWV,0,39.7423,-105.1785,1828.8,0
+IRRSP,NREL Solar Radiation Research Laboratory (Irradiance Inc. RSP v2),SRRL RSP2,0,39.7423,-105.1785,1828.8,1
+RAZON,NREL Solar Radiation Research Laboratory (RaZON+),SRRL RaZON,0,39.7423,-105.1785,1828.8,1
+RSP,NREL Solar Radiation Research Laboratory (Schott RSP),SRRL RSP1,0,39.7423,-105.1785,1828.8,0
+MFR,NREL Solar Radiation Research Laboratory (YES MFR),SRRL MFR,0,39.7423,-105.1785,1828.8,0
+TSR,NREL Solar Radiation Research Laboratory (YES TSR),SRRL TSR,0,39.7423,-105.1785,1828.8,0
+VTIF,NREL Vehicle Testing and Integration Facility RSR,VTIF RSR,0,39.74211,-105.17572,1793,0
+NELHA,Natural Energy Laboratory of Hawaii Authority (NELHA),NELHA,0,19.728144,-156.058936,4,1
+NPC,Nevada Power Clark Station,NPCS,0,36.08581,-115.05189,523,0
+ORNL,Oak Ridge National Laboratory (RSR),ORNL RSR,0,35.92996,-84.30952,245,0
+OSUBUR,Oregon State University (Burns),OSU Burns,0,43.5192,-119.02162,1270,1
+OSUHER,Oregon State University (Hermiston),OSU Hermiston,0,45.818441,-119.284721,188,1
+OAHURS1M,SOLRMAP Kalaeloa Oahu (RSR),Kalaeloa Oahu,0,21.31347,-158.08257,11,0
+LANAI,SOLRMAP La Ola Lanai (RSR),La Ola Lanai,0,20.76685,-156.92291,381,0
+LMU,SOLRMAP Loyola Marymount University (RSR),LMU,0,33.966674,-118.4226,27,0
+SSSCAT,SOLRMAP Southwest Solar Research Park,SW Solar,0,33.41663,-112.01875,347,0
+SS2,SOLRMAP Sun Spot Two - Swink (RSR),SunSpot2,0,38.01221,-103.61696,1255,0
+TSESC,SOLRMAP Tri-State Escalante (RSR),TS Escalante,0,35.41861,-108.08828,2106,0
+UAT,SOLRMAP University of Arizona (OASIS),UA OASIS,0,32.22969,-110.95534,786,1
+USEPCC,SOLRMAP Utah Geological Survey - State Energy Program (Cedar City),USEP Cedar,0,37.69601,-113.16483,1675,0
+USEPMF,SOLRMAP Utah Geological Survey - State Energy Program (Milford),USEP Milford,0,38.41431,-113.02967,1550,0
+AUXB,SRRL Ancillary Data (1-Axis Tracker Status),SRRL 1Ax-Tracker,0,39.7423,-105.1785,1828.8,1
+AUXG,SRRL Ancillary Data (Digital Status),SRRL Aux Digital,0,39.7423,-105.1785,1828.8,1
+AUXC,SRRL Ancillary Data (High Wind Alerts),SRRL High Wind,0,39.7423,-105.1785,1828.8,1
+AUXE,SRRL Ancillary Data (Research Channels #1),SRRL Aux Research1,0,39.7423,-105.1785,1828.8,1
+AUXF,SRRL Ancillary Data (Research Channels #2),SRRL Aux Research2,0,39.7423,-105.1785,1828.8,1
+AUXD,SRRL Ancillary Data (Tracker and TEC Status),SRRL Aux Tracker,0,39.7423,-105.1785,1828.8,1
+AUXA,SRRL Ancillary Data,SRRL Ancillary,0,39.7423,-105.1785,1828.8,1
+PVSBMSMP,SRRL PV Resource (BMS-Samples),SRRL PV BMS-Samp,0,39.7423,-105.1785,1828.8,1
+PVSFTSMP,SRRL PV Resource (FT-Samples),SRRL PV FT-Samp,0,39.7423,-105.1785,1828.8,1
+PVSFT,SRRL PV Resource (Fixed Tilt),SRRL PV-Tilt,0,39.7423,-105.1785,1828.8,1
+PVSGHSMP,SRRL PV Resource (GH-Samples),SRRL PV GH-Samp,0,39.7423,-105.1785,1828.8,1
+PVSGH,SRRL PV Resource (Global Horiz),SRRL PV-Horiz,0,39.7423,-105.1785,1828.8,1
+PVSSASMP,SRRL PV Resource (ST-Samples),SRRL PV ST-Samp,0,39.7423,-105.1785,1828.8,1
+PVSSA,SRRL PV Resource,SRRL PV,0,39.7423,-105.1785,1828.8,1
+SSIM,SRRL SolarSIM-D2+ Direct Normal,SRRL SSIM,0,39.7423,-105.1785,1828.8,1
+SSIMG,SRRL SolarSIM-G Global Horizontal,SRRL SSIMG,0,39.7423,-105.1785,1828.8,1
+SMUDA,Sacramento Municipal Utility District (Anatolia),SMUD Anatolia,0,38.54586,-121.24029,51,0
+SCI,San Clemente Island Data,SCID,0,32.9,-118.4833,223,0
+AODSTAC0E,Solar Technology Acceleration Center (AOD ESR Level 0),STAC AOD ESR0,0,39.75685,-104.62025,1674,0
+AODSTAC1E,Solar Technology Acceleration Center (AOD ESR Level 1.1),STAC AOD ESR1,0,39.75685,-104.62025,1674,0
+AODSTAC0S,Solar Technology Acceleration Center (AOD SkyRad Level 0),STAC AOD Sky0,0,39.75685,-104.62025,1674,0
+AODSTAC1S,Solar Technology Acceleration Center (AOD SkyRad Level 1.1),STAC AOD Sky1,0,39.75685,-104.62025,1674,0
+PWVSTAC,Solar Technology Acceleration Center (GPS-based PWV),STAC PWV,0,39.75685,-104.62025,1674,0
+STAC,Solar Technology Acceleration Center (SolarTAC),SolarTAC,0,39.75685,-104.62025,1674,1
+SPMD,South Park Mountain Data,SPMD,0,39.27278,-105.62472,2944,0
+SS1,Sun Spot One - San Luis Valley (RSR),SunSpot1,0,37.561,-106.0864,2335,0
+USVIBOVB,US Virgin Islands Bovoni 2,USVI Bovoni 2,0,18.3055,-64.8763,49,0
+USVILONA,US Virgin Islands Longford,USVI Longford,0,17.70799,-64.69328,28,0
+UFL,University of Florida,UF,0,29.626968,-82.360851,27.4,1
+ULL,University of Louisiana at Lafayette,UL Lafayette,0,30.20506,-92.39793,5,1
+UNLV,University of Nevada - Las Vegas,UNLV,0,36.107,-115.1425,615,1
+PWVUO,University of Oregon (GPS-based PWV),UO PWV,0,44.0467,-123.0743,133.8,0
+UOSMRL,University of Oregon (SRML),UO SRML,0,44.0467,-123.0743,133.8,1
+UTPASRL,University of Texas Rio Grande Valley Solar Radiation Lab,UTRGV SRL,0,26.3059,-98.1716,45.4,1
+UWSEA,University of Washington (Seattle),UW Seattle,0,47.653871,-122.309481,70,1
+PVSUOSMP,UofO PV Resource (Samples),UO PV-Samp,0,44.0467,-123.0743,133.8,1
+PVSUO,UofO PV Resource,UO PV,0,44.0467,-123.0743,133.8,1
+XECS,Xcel Energy Comanche Station (RSR),XECS,0,38.2098,-104.5724,1490,0

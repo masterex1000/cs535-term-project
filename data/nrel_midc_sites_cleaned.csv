@@ -1,0 +1,37 @@
+site_id,name,longitude,latitude,Elevation (AMSL)
+RCS,ARM Radiometer Characterization System,-97.486,36.606,320
+LLLJP,Lamar Low-Level Jet Project,-102.66385,37.66835,1387
+SCI,San Clemente Island Data,-118.4833,32.9,223
+SPMD,South Park Mountain Data,-105.62472,39.27278,2944
+BS,Bluefield State College,-81.24,37.265,803
+EC,Elizabeth City State University,-76.216,36.282,26
+HSU,Cal Poly Humboldt (SoRMS),-124.08,40.876,36
+UTPASRL,University of Texas Rio Grande Valley Solar Radiation Lab,-98.1716,26.3059,45.4
+SMUDA,Sacramento Municipal Utility District (Anatolia),-121.24029,38.54586,51
+NELHA,Natural Energy Laboratory of Hawaii Authority (NELHA),-156.058936,19.728144,4
+ORNL,Oak Ridge National Laboratory,-84.30952,35.92996,245
+XECS,Xcel Energy Comanche Station,-104.5724,38.2098,1490
+LRSS,Lowry Range Solar Station,-104.58017,39.60701,1860
+UNLV,University of Nevada - Las Vegas,-115.1425,36.107,615
+NPC,Nevada Power Clark Station,-115.05189,36.08581,523
+SS1,Sun Spot One - San Luis Valley,-106.0864,37.561,2335
+SS2,SOLRMAP Sun Spot Two - Swink,-103.61696,38.01221,1255
+USEPMF,SOLRMAP Utah Geological Survey - State Energy Program,-113.02967,38.41431,1550
+USEPCC,SOLRMAP Utah Geological Survey - State Energy Program,-113.16483,37.69601,1675
+LMU,SOLRMAP Loyola Marymount University,-118.4226,33.966674,27
+TSESC,SOLRMAP Tri-State Escalante,-108.08828,35.41861,2106
+OAHURS1M,SOLRMAP Kalaeloa Oahu,-158.08257,21.31347,11
+LANAI,SOLRMAP La Ola Lanai,-156.92291,20.76685,381
+SSSCAT,SOLRMAP Southwest Solar Research Park,-112.01875,33.41663,347
+UAT,SOLRMAP University of Arizona,-110.95534,32.22969,786
+UFL,University of Florida,-82.360851,29.626968,27.4
+ULL,University of Louisiana at Lafayette,-92.39793,30.20506,5
+UWSEA,University of Washington (Seattle),-122.309481,47.653871,70
+OSUHER,Oregon State University (Hermiston),-119.284721,45.818441,188
+OSUBUR,Oregon State University (Burns),-119.02162,43.5192,1270
+UOSMRL,University of Oregon (SRML),-123.0743,44.0467,133.8
+STAC,Solar Technology Acceleration Center (SolarTAC),-104.62025,39.75685,1674
+ESIF,NREL Energy Systems Integration Facility,-105.1701,39.7427,1793
+VTIF,NREL Vehicle Testing and Integration Facility RSR,-105.17572,39.74211,1793
+NWTC,NREL Flatirons Campus (M2),-105.2347,39.9106,1855
+BMS,NREL Solar Radiation Research Laboratory,-105.18,39.742,1828.8

@@ -1,0 +1,37 @@
+site_id,name,longitude,latitude,Elevation
+RCS,ARM Radiometer Characterization System,97.486 West,36.606o North,320 AMSL
+LLLJP,Lamar Low-Level Jet Project,102.66385o West,37.66835o North,1387 AMSL
+SCI,San Clemente Island Data,118.4833o West,32.9o North,223 AMSL
+SPMD,South Park Mountain Data,105.62472o West,39.27278o North,2944 AMSL
+BS,Bluefield State College,81.24o West,37.265o North,803 AMSL
+EC,Elizabeth City State University,76.216o West,36.282o North,26 AMSL
+HSU,Cal Poly Humboldt (SoRMS),40.876o North,124.08o West,36 AMSL
+UTPASRL,University of Texas Rio Grande Valley Solar Radiation Lab,98.1716o West,26.3059o North,45.4 AMSL
+SMUDA,Sacramento Municipal Utility District (Anatolia),121.24029o West,38.54586o North,51 AMSL
+NELHA,Natural Energy Laboratory of Hawaii Authority (NELHA),156.058936o West,19.728144o North,4 AMSL
+ORNL,Oak Ridge National Laboratory,84.30952o West,35.92996o North,245 AMSL
+XECS,Xcel Energy Comanche Station,104.5724o West,38.2098o North,1490 AMSL
+LRSS,Lowry Range Solar Station,104.58017o West,39.60701o North,1860 AMSL
+UNLV,University of Nevada - Las Vegas,115.1425o West,36.107o North,615 AMSL
+NPC,Nevada Power Clark Station,115.05189o West,36.08581o North,523 AMSL
+SS1,Sun Spot One - San Luis Valley,106.0864o West,37.561o North,2335 AMSL
+SS2,SOLRMAP Sun Spot Two - Swink,103.61696o West,38.01221o North,1255 AMSL
+USEPMF,SOLRMAP Utah Geological Survey - State Energy Program,113.02967o West,38.41431o North,1550 AMSL
+USEPCC,SOLRMAP Utah Geological Survey - State Energy Program,113.16483o West,37.69601o North,1675 AMSL
+LMU,SOLRMAP Loyola Marymount University,118.4226o West,33.966674o North,27 AMSL
+TSESC,SOLRMAP Tri-State Escalante,108.08828o West,35.41861o North,2106 AMSL
+ OAHURS1M,SOLRMAP Kalaeloa Oahu,158.08257o West,21.31347o North,11 AMSL
+LANAI,SOLRMAP La Ola Lanai,156.92291o West,20.76685o North,381 AMSL
+SSSCAT,SOLRMAP Southwest Solar Research Park,112.01875o West,33.41663o North,347 AMSL
+UAT,SOLRMAP University of Arizona,110.95534o West,32.22969o North,786 AMSL
+UFL,University of Florida,82.360851o West,29.626968o North,27.4 AMSL
+ULL,University of Louisiana at Lafayette,92.39793o West,30.20506o North,5 AMSL
+UWSEA,University of Washington (Seattle),122.309481o West,47.653871o North,70 AMSL
+OSUHER,Oregon State University (Hermiston),119.284721o West,45.818441o North,188 AMSL
+OSUBUR,Oregon State University (Burns),119.02162o West,43.5192o North,1270 AMSL
+UOSMRL,University of Oregon (SRML),123.0743o West,44.0467o North,133.8 AMSL
+STAC,Solar Technology Acceleration Center (SolarTAC),104.62025o West,39.75685o North,1674 AMSL
+ESIF,NREL Energy Systems Integration Facility,105.1701o West,39.7427o North,1793 AMSL
+VTIF,NREL Vehicle Testing and Integration Facility RSR,105.17572o West,39.74211o North,1793 AMSL
+NWTC,NREL Flatirons Campus (M2),105.2347o West,39.9106o North,1855 AMSL
+BMS,NREL Solar Radiation Research Laboratory,105.18o West,39.742o North,1828.8 AMSL
