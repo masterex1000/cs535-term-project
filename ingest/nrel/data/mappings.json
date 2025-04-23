@@ -1,0 +1,105 @@
+{
+    "BMS": {
+        "temp": "Tower Dry Bulb Temp [deg C]",
+        "wind_speed": "Avg Wind Speed @ 19ft [m/s]",
+        "wind_direction": "Avg Wind Direction @ 19ft [deg from N]",
+        "ght": "Global PSP (vent/cor) [W/m^2]",
+        "humidity": "Deck RH [%]"
+    },
+    "ESIF": {
+        "temp": "Air Temperature [deg C]",
+        "wind_speed": "Avg Wind Speed @ 0m [m/s]",
+        "wind_direction": "Avg Wind Direction @ 0m [deg from N]",
+        "ght": "Global Horizontal [W/m^2]",
+        "humidity": "Rel Humidity [%]"
+    },
+    "NWTC": {
+        "temp": "Temperature @ 2m [deg C]",
+        "wind_speed": "Avg Wind Speed @ 5m [m/s]",
+        "wind_direction": "Avg Wind Direction @ 5m [deg]",
+        "ght": "Global Horizontal [W/m^2]",
+        "humidity": "Relative Humidity [%]"
+    },
+    "AODSRRLAM": {},
+    "AODSRRLBE": {},
+    "AODSRRLAE": {},
+    "AODSRRLBC": {},
+    "IRRSP": {
+        "temp": "Air Temperature [deg C]",
+        "wind_speed": "Avg Wind Speed @ 19ft [m/s]",
+        "wind_direction": "Avg Wind Direction @ 19ft [deg from N]",
+        "ght": "Global Horizontal [W/m^2]",
+        "humidity": "Rel Humidity [%]"
+    },
+    "SRRLASI": {},
+    "RAZON": {
+        "temp": "PR1 Temperature [deg C]",
+        "ght": "Global Horizontal [W/m^2]"
+    },
+    "NELHA": {
+        "temp": "Air Temperature [deg C]",
+        "wind_speed": "Avg Wind Speed @ 10m [m/s]",
+        "wind_direction": "Avg Wind Direction @ 10m [deg from N]",
+        "ght": "Global Horizontal [W/m^2]",
+        "humidity": "Rel Humidity [%]"
+    },
+    "OSUBUR": {
+        "temp": "Air Temperature [deg C]",
+        "ght": "Global [W/m^2]",
+        "humidity": "Relative Humidity [%]"
+    },
+    "OSUHER": {
+        "temp": "Air Temperature [deg C]",
+        "ght": "Global [W/m^2]"
+    },
+    "UAT": {
+        "temp": "Air Temperature [deg C]",
+        "wind_speed": "Avg Wind Speed @ 3m [m/s]",
+        "wind_direction": "Avg Wind Direction @ 3m [deg from N]",
+        "ght": "Global Horiz (platform) [W/m^2]",
+        "humidity": "Rel Humidity [%]"
+    },
+    "AUXB": {},
+    "AUXG": {},
+    "AUXC": {},
+    "PVSBMSMP": {},
+    "PVSFTSMP": {},
+    "PVSFT": {},
+    "PVSGHSMP": {},
+    "PVSGH": {},
+    "PVSSA": {},
+    "SSIM": {
+        "temp": "Air Temperature [deg C]"
+    },
+    "SSIMG": {},
+    "STAC": {
+        "temp": "Air Temperature [deg C]",
+        "wind_speed": "Avg Wind Speed @ 10m [m/s]",
+        "wind_direction": "Avg Wind Direction @ 10m [deg from N]",
+        "ght": "Global Horizontal [W/m^2]",
+        "humidity": "Rel Humidity [%]"
+    },
+    "UFL": {
+        "temp": "Air Temperature [deg C]",
+        "wind_speed": "Avg Wind Speed @ 3m [m/s]",
+        "wind_direction": "Avg Wind Direction @ 3m [deg from N]",
+        "ght": "Global Horiz [W/m^2]",
+        "humidity": "Rel Humidity [%]"
+    },
+    "ULL": {
+        "temp": "Air Temperature [deg C]",
+        "wind_speed": "Avg Wind Speed @ 3m [m/s]",
+        "wind_direction": "Avg Wind Direction @ 3m [deg from N]",
+        "ght": "Global Horizontal [W/m^2]",
+        "humidity": "Rel Humidity [%]"
+    },
+    "UNLV": {},
+    "UOSMRL": {},
+    "UTPASRL": {},
+    "UWSEA": {
+        "temp": "Air Temperature [deg C]",
+        "ght": "Global [W/m^2]"
+    },
+    "PVSUOSMP": {},
+    "PVSUO": {}
+}

@@ -1,0 +1,15 @@
+STATION_ID,STATION_FULLNAME,STATION_SHORTNAME,RESERVED,LATITUDE_DEG,LONGITUDE_DEG,ELEVATION_M,ACTIVE
+ESIF,NREL Energy Systems Integration Facility,ESIF,0,39.7427,-105.1701,1793.0,1
+NWTC,NREL Flatirons Campus (M2),Flatirons M2,0,39.9106,-105.2347,1855.0,1
+BMS,NREL Solar Radiation Research Laboratory (BMS),SRRL BMS,0,39.7423,-105.1785,1828.8,1
+NELHA,Natural Energy Laboratory of Hawaii Authority (NELHA),NELHA,0,19.728144,-156.058936,4.0,1
+OSUBUR,Oregon State University (Burns),OSU Burns,0,43.5192,-119.02162,1270.0,1
+OSUHER,Oregon State University (Hermiston),OSU Hermiston,0,45.818441,-119.284721,188.0,1
+UAT,SOLRMAP University of Arizona (OASIS),UA OASIS,0,32.22969,-110.95534,786.0,1
+STAC,Solar Technology Acceleration Center (SolarTAC),SolarTAC,0,39.75685,-104.62025,1674.0,1
+UFL,University of Florida,UF,0,29.626968,-82.360851,27.4,1
+ULL,University of Louisiana at Lafayette,UL Lafayette,0,30.20506,-92.39793,5.0,1
+UNLV,University of Nevada - Las Vegas,UNLV,0,36.107,-115.1425,615.0,1
+UOSMRL,University of Oregon (SRML),UO SRML,0,44.0467,-123.0743,133.8,1
+UTPASRL,University of Texas Rio Grande Valley Solar Radiation Lab,UTRGV SRL,0,26.3059,-98.1716,45.4,1
+UWSEA,University of Washington (Seattle),UW Seattle,0,47.653871,-122.309481,70.0,1
