@@ -78,35 +78,6 @@ def chop_in_quadhash(input_base_path, output_base_path):
                 else:
                     print(f"Failed to create: {output_tif_path}")
 
-    # for ind, row in quadhashes.iterrows():
-    #     poly, quadkey = row["geometry"], row["Quadkey"]
-
-    #     count += 1
-    #     print("Splitting: ", count, "/", total)
-
-    #     os.makedirs(os.path.join(out_path, quadkey), exist_ok=True)
-
-    #     bounds = list(poly.exterior.coords)
-    #     window = (bounds[0][0], bounds[0][1], bounds[2][0], bounds[2][1])
-
-    #     output_tif_path = os.path.join(out_path, quadkey, "nlcd.tif")
-
-    #     gdal.Translate(output_tif_path, in_path, projWin=window)
-
-    #     if os.path.exists(output_tif_path):
-    #         x = gdal.Open(output_tif_path).ReadAsArray()
-    #         if np.min(x) == np.max(x) == 0:
-    #             os.remove(output_tif_path)  # Remove empty TIFF
-    #             print(f"Removed empty file: {output_tif_path}")
-    #         else:
-    #             print(f"Created: {output_tif_path}")
-    #     else:
-    #         print(f"Failed to create: {output_tif_path}")
-
-
-# if __name__ == "__main__":
-#     chop_in_quadhash()
-
 if __name__ == "__main__":
     input_base_path = (
         "/s/parsons/b/others/sustain/diurnalModel/data/TifFolder"
