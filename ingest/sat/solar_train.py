@@ -85,7 +85,7 @@ def train_model():
     # save model
     os.makedirs("models", exist_ok=True)
     torch.save(model.state_dict(), "models/solar_net.pth")
-    print("✅ done，model saved： models/solar_net.pth")
+    print(" done，model saved： models/solar_net.pth")
 
 if __name__ == "__main__":
     train_model()
