@@ -1,5 +1,6 @@
 import os
 import socket
+from typing import List
 import geopandas as gpd
 import numpy as np
 from osgeo import gdal
@@ -57,6 +58,24 @@ def get_site_future_output(cursor: sqlite3.Cursor, site_id: str, timestamp):
 
     return ght_values
 
+def get_site_prev_output(cursor: sqlite3.Cursor, site_id: str, timestamp) -> List[float]:
+    prev_ght_query = '''
+        SELECT
+            site_id,
+            AVG(ght) AS avg_ght, 
+            count(1) as records
+        FROM samples
+        WHERE timestamp <= ?
+            AND timestamp >= ? - (1 * 3600)
+            AND site_id=?
+        GROUP BY site_id
+        ORDER BY site_id;
+    '''
+    
+    result = cursor.execute(prev_ght_query, (timestamp, timestamp, site_id)).fetchone()
+    
+    return result[1], result[2]
+
 def get_timestamp(year, day_of_year, hour):
     dt = datetime(year, 1, 1) + datetime.timedelta(days=day_of_year - 1, hours=hour)
 
@@ -80,9 +99,9 @@ def chop_to_locations(database_path: str, input_base_path, output_base_path):
 
     # for day in range(365, 366):
     # for day in range(100, 101):
-    # for day in range(366):
+    for day in range(366):
     # for day in range(335, 366):
-    for day in range(357, 366):
+    # for day in range(357, 366):
         print(f"Processing day: {day}")
         day_dir = f"{day:03d}"
         day_input_path = os.path.join(input_base_path, day_dir)
@@ -93,6 +112,8 @@ def chop_to_locations(database_path: str, input_base_path, output_base_path):
             continue
 
         os.makedirs(output_day_path, exist_ok=True)
+
+        print(f"---- Processing Day {day} ----")
 
         for hour in range(24):  # 00 to 23 hours
         # for hour in range(10,11):  # 00 to 23 hours
@@ -111,13 +132,17 @@ def chop_to_locations(database_path: str, input_base_path, output_base_path):
             meta = ds.GetMetadata()
 
             capture_time_start = meta.get('NC_GLOBAL#time_coverage_start', None)
+            capture_time_end = meta.get('NC_GLOBAL#time_coverage_end', None)
 
             timestamp = None
 
             if not capture_time_start:
                 timestamp = get_timestamp(2022, day, hour)
             else:
-                timestamp = datetime.strptime(capture_time_start, "%Y-%m-%dT%H:%M:%S.%fZ").timestamp()
+                timestamp_start = datetime.strptime(capture_time_start, "%Y-%m-%dT%H:%M:%S.%fZ").timestamp()
+                timestamp_end = datetime.strptime(capture_time_start, "%Y-%m-%dT%H:%M:%S.%fZ").timestamp()
+                
+                timestamp = (timestamp_start + timestamp_end) / 2 # Try to average these? Might help
 
             for site_id, site in sites.items():
                 output_tif_path = os.path.join(output_hour_path, f"{site_id}.tif")
@@ -144,6 +169,10 @@ def chop_to_locations(database_path: str, input_base_path, output_base_path):
 
                 created = gdal.Open(output_tif_path, gdal.GA_Update)
 
+                prev_ght, prev_count = get_site_prev_output(cursor, site, timestamp)
+                
+                if(prev_count < 30):
+                    print(f"Does not have enough prior measurements for {site_id} to reliably calculate avg_ght")
 
                 if not created:
                     os.remove(output_tif_path) # We can't add metadata for whatever reason
@@ -165,6 +194,8 @@ def chop_to_locations(database_path: str, input_base_path, output_base_path):
                     "in_l_wind_direction": current_weather["wind_direction"],
                     "in_m_ght": current_weather["ght"],
                     "in_n_wind_speed": current_weather["humidity"],
+                    
+                    "in_o_prev_ght_1": prev_ght,
 
                     "out_ght_1": predicted[0],
                     "out_ght_2": predicted[1],
@@ -197,42 +228,6 @@ def get_bound_lat_longs(ds, srcWin):
     lrx, lry = gdal.ApplyGeoTransform(gt, srcWin[0] + srcWin[2], srcWin[1] + srcWin[3])
 
     return ulx, uly, lrx, lry  # lon/lat bounds
-
-
-# def crop_and_get_bounds(input_path, output_path, center_lat, center_lon, size=128):
-#     ds = gdal.Open(input_path)
-#     gt = ds.GetGeoTransform()
-#     inv_gt = gdal.InvGeoTransform(gt)
-
-#     # Convert center lon/lat to pixel
-#     px, py = gdal.ApplyGeoTransform(inv_gt, center_lon, center_lat)
-#     px = int(round(px))
-#     py = int(round(py))
-#     half = size // 2
-#     xoff = px - half
-#     yoff = py - half
-
-#     # Crop
-#     gdal.Translate(
-#         output_path,
-#         ds,
-#         srcWin=[xoff, yoff, size, size],
-#         format="GTiff"
-#     )
-
-#     # Convert pixel window to geographic bounds
-#     ulx, uly = gdal.ApplyGeoTransform(gt, xoff, yoff)
-#     lrx, lry = gdal.ApplyGeoTransform(gt, xoff + size, yoff + size)
-
-#     return ulx, uly, lrx, lry  # lon/lat bounds
-
-
-# if __name__ == "__main__":
-#     # input_base_path = "/s/parsons/b/others/sustain/diurnalModel/data/TifFolder"
-#     # output_base_path = "/s/parsons/b/others/sustain/diurnalModel/quadHash2"
-
-#     chop_to_locations(input_base_path, output_base_path)
-
 
 def main():
     parser = argparse.ArgumentParser(description="Generate overhead site images with metadata")

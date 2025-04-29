@@ -6,46 +6,58 @@ import torch.nn.functional as F
 import torch.nn as nn
 from torchvision import transforms
 from dataset import TiffMetadataDataset
+# from dataset_rasterio import TiffMetadataDataset
 import glob
 import tqdm
 from solar_resnet18_late import ResNetWithMetadata
 
 # Load file paths
-# tiff_files = glob.glob('../ingest/sat/data/output/**/**/*.tif')  # <- Change this
-# tiff_files = glob.glob('../ingest/sat/data/output/001/**/*.tif')  # <- Change this
-tiff_files = glob.glob('../ingest/sat/data/output/01*/**/*.tif')  # <- Change this
+tiff_files = glob.glob('ingest/sat/data/output/**/**/*.tif')  # <- Change this
+# tiff_files = glob.glob('ingest/sat/data/output/001/**/*.tif')  # <- Change this
+# tiff_files = glob.glob('ingest/sat/data/output/0**/**/*.tif')  # <- Change this
 
 
-print(len(tiff_files))
+print(f"Dataset includes {len(tiff_files)} samples")
 train_paths, val_paths = train_test_split(tiff_files, test_size=0.2, random_state=42)
 
 # Transforms
-transform = transforms.Resize((128, 128))  # Already grayscale
+# transform = transforms.Resize((128, 128))  # Already grayscale
+transform = None
 
 # Datasets
 train_dataset = TiffMetadataDataset(train_paths, transform=transform)
 val_dataset = TiffMetadataDataset(val_paths, transform=transform,
-                                  normalize_metadata=False)  # reuse stats
+                                  normalize_metadata=False,
+                                  normalize_outputs=False)  # reuse stats
+
+print(f"Loaded datasets ({len(train_dataset.labels)} samples in train, {len(val_dataset.labels)} samples in validate)")
+
+print(f"Selected mean: {train_dataset.meta_mean}, std: {train_dataset.meta_std}")
 
 # Apply same normalization
 val_dataset.meta_mean = train_dataset.meta_mean
 val_dataset.meta_std = train_dataset.meta_std
 val_dataset.metadata = (val_dataset.metadata - val_dataset.meta_mean) / val_dataset.meta_std
 
+val_dataset.label_mean = train_dataset.label_mean
+val_dataset.label_std = train_dataset.label_std
+val_dataset.labels = (val_dataset.labels - val_dataset.label_mean) / val_dataset.label_std
+
 # Dataloaders
-train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
-val_loader = DataLoader(val_dataset, batch_size=32)
+train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
+val_loader = DataLoader(val_dataset, batch_size=64)
 
 # Model
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-model = ResNetWithMetadata(metadata_dim=14, output_dim=6).to(device)
+# model = ResNetWithMetadata(metadata_dim=14, output_dim=6).to(device)
+model = ResNetWithMetadata(metadata_dim=len(train_dataset.metadata[0]), output_dim=6).to(device)
 
 # Optimizer & loss
 optimizer = optim.Adam(model.parameters(), lr=1e-4)
 loss_fn = nn.MSELoss()
 
 # Training loop
-for epoch in range(10):  # adjust as needed
+for epoch in range(50):  # adjust as needed
     model.train()
     train_loss = 0.0
     for img, meta, label in tqdm.tqdm(train_loader, desc=f"Epoch {epoch+1} [train]"):
