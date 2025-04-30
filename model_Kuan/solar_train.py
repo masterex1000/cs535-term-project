@@ -6,7 +6,7 @@ import os
 import sys
 
 sys.path.append(os.path.dirname(__file__))
-from solar_dataset import SolarDataset
+from model_Kuan.solar_dataset import SolarDataset
 
 
 class SolarNet(nn.Module):
