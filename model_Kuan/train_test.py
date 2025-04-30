@@ -6,57 +6,57 @@ import os
 import sys
 
 sys.path.append(os.path.dirname(__file__))
-from solar_dataset import SolarDataset
+from model_Kuan.solar_dataset import SolarDataset
 
-# --- 模型定义 ---
+# definition model
 
 class SolarNet(nn.Module):
     def __init__(self):
         super(SolarNet, self).__init__()
-        # 图像特征 CNN
+        # image features， CNN
         self.cnn = nn.Sequential(
             nn.Conv2d(1, 16, kernel_size=3, stride=2, padding=1),
             nn.ReLU(),
             nn.Conv2d(16, 32, kernel_size=3, stride=2, padding=1),
             nn.ReLU(),
-            nn.AdaptiveAvgPool2d((1, 1)),  # 输出变成 (B, 32, 1, 1)
+            nn.AdaptiveAvgPool2d((1, 1)),  # output --》 (B, 32, 1, 1)
         )
 
-        # 天气特征
+        # weather features
         self.weather_fc = nn.Sequential(
             nn.Linear(5, 32),
             nn.ReLU(),
         )
 
-        # 综合后预测
+        # prediction
         self.fc_final = nn.Sequential(
             nn.Linear(32 + 32, 64),
             nn.ReLU(),
-            nn.Linear(64, 1)  # 预测未来6小时GHT均值
+            nn.Linear(64, 1)  # predict the next 6 hours GHT value 
         )
 
     def forward(self, image, weather):
         img_feat = self.cnn(image)
-        img_feat = img_feat.view(img_feat.size(0), -1)  # 展平
+        img_feat = img_feat.view(img_feat.size(0), -1)  # flat
 
         weather_feat = self.weather_fc(weather)
 
         combined = torch.cat([img_feat, weather_feat], dim=1)
         out = self.fc_final(combined)
-        return out.squeeze(1)  # (B,) 方便计算loss
+        return out.squeeze(1)  # (B,) caculate the loss
 
-# --- 训练流程 ---
+# 
 
 def train_model():
-    # 设备选择
+    # device chose
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
-    # 加载数据
-    dataset = SolarDataset("data/images")  # 修改为实际路径
+    # load data 
+    dataset = SolarDataset("data/images")  
     train_loader = DataLoader(dataset, batch_size=64, shuffle=True, num_workers=2)
 
-    # 初始化模型
+    # initial 
     model = SolarNet().to(device)
     optimizer = optim.Adam(model.parameters(), lr=0.001)
     criterion = nn.MSELoss()
@@ -83,10 +83,10 @@ def train_model():
         epoch_loss = running_loss / len(train_loader.dataset)
         print(f"Epoch [{epoch+1}/{num_epochs}] Loss: {epoch_loss:.4f}")
 
-    # 保存模型
+    # save model
     os.makedirs("models", exist_ok=True)
     torch.save(model.state_dict(), "models/solar_net.pth")
-    print("✅ 训练完成，模型已保存到 models/solar_net.pth")
+    print("model saved models/solar_net.pth")
 
 if __name__ == "__main__":
     train_model()
