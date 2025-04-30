@@ -33,14 +33,14 @@ class ResNetWithMetadata(nn.Module):
         self.resnet.fc = nn.Identity()
 
         self.meta_net = nn.Sequential(
-            nn.Linear(metadata_dim, 64),
+            nn.Linear(metadata_dim, 32),
             nn.ReLU(),
             nn.Dropout(p=0.2),
-            nn.Linear(64, 128),
+            nn.Linear(32, 64),
         )
 
         self.head = nn.Sequential(
-            nn.Linear(512 + 128, 128),
+            nn.Linear(512 + 64, 128),
             nn.ReLU(),
             nn.Dropout(p=0.5),
             nn.Linear(128, output_dim),

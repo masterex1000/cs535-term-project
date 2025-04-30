@@ -30,6 +30,7 @@ class TiffMetadataDataset(Dataset):
                 
                 metadata = np.array([
                     # float(md['in_a_timestamp']),
+                    # float(md['in_p_timestamp_mid']), # Use midpoint timestamp
                     float(md['in_b_ulx']),
                     float(md['in_c_uly']),
                     float(md['in_d_lrx']),
@@ -43,6 +44,8 @@ class TiffMetadataDataset(Dataset):
                     float(md['in_l_wind_direction']),
                     float(md['in_m_ght']),
                     float(md['in_n_wind_speed']),
+                    
+                    float(md['in_o_prev_ght_1'])
                 ])
 
 

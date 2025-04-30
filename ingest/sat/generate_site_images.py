@@ -113,8 +113,6 @@ def chop_to_locations(database_path: str, input_base_path, output_base_path):
 
         os.makedirs(output_day_path, exist_ok=True)
 
-        print(f"---- Processing Day {day} ----")
-
         for hour in range(24):  # 00 to 23 hours
         # for hour in range(10,11):  # 00 to 23 hours
             hour_dir = f"{hour:02d}"
@@ -135,14 +133,18 @@ def chop_to_locations(database_path: str, input_base_path, output_base_path):
             capture_time_end = meta.get('NC_GLOBAL#time_coverage_end', None)
 
             timestamp = None
+            timestamp_mid = None
 
             if not capture_time_start:
                 timestamp = get_timestamp(2022, day, hour)
             else:
-                timestamp_start = datetime.strptime(capture_time_start, "%Y-%m-%dT%H:%M:%S.%fZ").timestamp()
-                timestamp_end = datetime.strptime(capture_time_start, "%Y-%m-%dT%H:%M:%S.%fZ").timestamp()
+                timestamp = datetime.strptime(capture_time_start, "%Y-%m-%dT%H:%M:%S.%fZ").timestamp()
+                timestamp_end = datetime.strptime(capture_time_end, "%Y-%m-%dT%H:%M:%S.%fZ").timestamp()
                 
-                timestamp = (timestamp_start + timestamp_end) / 2 # Try to average these? Might help
+                timestamp_mid = (timestamp + timestamp_end) / 2 # Try to average these? Might help
+            
+            if timestamp == None:
+                timestamp_mid = timestamp
 
             for site_id, site in sites.items():
                 output_tif_path = os.path.join(output_hour_path, f"{site_id}.tif")
@@ -169,7 +171,7 @@ def chop_to_locations(database_path: str, input_base_path, output_base_path):
 
                 created = gdal.Open(output_tif_path, gdal.GA_Update)
 
-                prev_ght, prev_count = get_site_prev_output(cursor, site, timestamp)
+                prev_ght, prev_count = get_site_prev_output(cursor, site_id, timestamp)
                 
                 if(prev_count < 30):
                     print(f"Does not have enough prior measurements for {site_id} to reliably calculate avg_ght")
@@ -196,6 +198,8 @@ def chop_to_locations(database_path: str, input_base_path, output_base_path):
                     "in_n_wind_speed": current_weather["humidity"],
                     
                     "in_o_prev_ght_1": prev_ght,
+                    
+                    "in_p_timestamp_mid": timestamp_mid,
 
                     "out_ght_1": predicted[0],
                     "out_ght_2": predicted[1],
