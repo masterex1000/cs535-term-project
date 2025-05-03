@@ -84,7 +84,7 @@ class TiffMetadataDataset(Dataset):
         ds = gdal.Open(path)
         img_array = ds.GetRasterBand(1).ReadAsArray()
 
-        img = torch.tensor(img_array, dtype=torch.float32).unsqueeze(0) / 255.0  # [1, H, W]
+        img = torch.tensor(img_array, dtype=torch.float32).unsqueeze(0) / 65535.0  # [1, H, W]
         if self.transform:
             img = self.transform(img)
 
